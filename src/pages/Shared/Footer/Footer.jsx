@@ -8,7 +8,7 @@ const Footer = () => {
 
 
                 <div>
-                    <h4 className='text-2xl font-extrabold mb-3'>About Us</h4>
+                    <h4 className='text-2xl font-extrabold mb-3 text-amber-500'>About Us</h4>
                     <p className='text-base mb-4'>What are the purpose of a recipe?
                         A recipe is simply defined as a set of instructions with a list of ingredients used to prepare a particular food, dish or drink. People use recipes to replicate foods they enjoy that they otherwise do not know how to make.</p>
                     <ul className='flex gap-5 text-2xl'>
@@ -20,7 +20,7 @@ const Footer = () => {
 
 
                 <div>
-                    <h4 className='text-2xl font-extrabold mb-3'>The Menu</h4>
+                    <h4 className='text-2xl font-extrabold mb-3 text-amber-500'>The Menu</h4>
                     <ul className='cursor-pointer'>
                         <li className='text-base font-semibold mb-2'>Speacial Items</li>
                         <li className='text-base font-semibold mb-2'>Fresh Breakfast</li>
@@ -31,7 +31,7 @@ const Footer = () => {
 
 
                 <div>
-                    <h4 className='text-2xl font-extrabold mb-3'>Get in Touch</h4>
+                    <h4 className='text-2xl font-extrabold mb-3 text-amber-500'>Get in Touch</h4>
                     <div className='flex gap-2'>
                         <ul>
                             <FaRegCalendarAlt className='text-4xl mb-2 text-green-500'></FaRegCalendarAlt>
