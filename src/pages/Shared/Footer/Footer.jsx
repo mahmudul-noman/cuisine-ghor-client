@@ -34,7 +34,7 @@ const Footer = () => {
                     <h4 className='text-2xl font-extrabold mb-3 text-amber-500'>Get in Touch</h4>
                     <div className='flex gap-2'>
                         <ul>
-                            <FaRegCalendarAlt className='text-4xl mb-2 text-green-500'></FaRegCalendarAlt>
+                            <FaRegCalendarAlt className='text-4xl mb-2 text-white'></FaRegCalendarAlt>
                         </ul>
                         <ul>
                             <li className='mb-4'>
@@ -50,7 +50,7 @@ const Footer = () => {
 
 
                     <div className='mt-4 flex gap-2 justify-content-center'>
-                        <ul><FaMapMarkerAlt className='text-4xl mb-2 text-green-500'></FaMapMarkerAlt></ul>
+                        <ul><FaMapMarkerAlt className='text-4xl mb-2 text-white'></FaMapMarkerAlt></ul>
                         <ul><p>Mirpur-1, Dhaka, Bangladesh</p></ul>
                     </div>
                 </div>
