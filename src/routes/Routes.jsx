@@ -5,6 +5,8 @@ import Login from "../pages/Shared/Login/Login";
 import LoginLayout from "../layouts/LoginLayout";
 import ChefCard from "../pages/Home/ChefCard/ChefCard";
 import Register from "../pages/Shared/Register/Register";
+import ChefDetailsLayout from "../layouts/ChefDetailsLayout";
+import ChefDetails from "../pages/Home/ChefDetails/ChefDetails";
 
 const router = createBrowserRouter([
     {
@@ -31,12 +33,17 @@ const router = createBrowserRouter([
     },
     {
         path: 'main',
-        element: <Main></Main>,
+        element: <Main></Main>
+    },
+    {
+        path: 'chef',
+        element: <ChefDetailsLayout></ChefDetailsLayout>,
         children: [
-            // {
-            //     path: '/chefcard',
-            //     element: <ChefCard></ChefCard>
-            // }
+            {
+                path: ':id',
+                element: <ChefDetails></ChefDetails>,
+                loader: ({ params }) => fetch(`http://localhost:5000/chef/${params.id}`)
+            }
         ]
     }
 ])
