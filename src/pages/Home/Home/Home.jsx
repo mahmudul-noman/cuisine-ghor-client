@@ -7,10 +7,7 @@ import NavBar from '../../Shared/NavBar/NavBar';
 const Home = () => {
     return (
         <div>
-            <NavBar></NavBar>
-            <Banner></Banner>
-            <Outlet></Outlet>
-            <Footer></Footer>
+
         </div>
     );
 };
