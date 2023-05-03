@@ -18,7 +18,7 @@ const NavBar = () => {
                             <ActiveLink to="/blog" className=''>Blog</ActiveLink>
                         </ul>
                     </div>
-                    <a className="text-xl font-bold italic flex gap-2 uppercase"><FaUtensils className='text-2xl text-amber-600'></FaUtensils> Cuisine Ghor</a>
+                    <Link className="text-xl font-bold flex gap-2 uppercase tracking-widest"><FaUtensils className='text-2xl text-amber-600'></FaUtensils> Cuisine Ghor</Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
