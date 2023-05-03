@@ -1,24 +1,42 @@
-import { createBrowserRouter } from "react-router-dom";
-import Home from "../pages/Home/Home/Home";
-import Banner from "../pages/Shared/Banner/Banner";
-import NavBar from "../pages/Shared/NavBar/NavBar";
+import { Navigate, createBrowserRouter } from "react-router-dom";
 import Main from "../layouts/Main";
 import Error from "../pages/Shared/Error/Error";
+import Login from "../pages/Shared/Login/Login";
+import LoginLayout from "../layouts/LoginLayout";
+import ChefCard from "../pages/Home/ChefCard/ChefCard";
+import Register from "../pages/Shared/Register/Register";
 
 const router = createBrowserRouter([
     {
+        path: '*',
+        element: <Error></Error>
+    },
+    {
         path: '/',
-        element: <Main></Main>,
-        errorElement: <Error></Error>,
+        element: <LoginLayout></LoginLayout>,
         children: [
             {
-                path: 'banner',
-                element: <Banner></Banner>
+                path: '/',
+                element: <Navigate to="/main"></Navigate>
             },
             {
-                path: 'navbar',
-                element: <NavBar></NavBar>
+                path: 'login',
+                element: <Login></Login>
+            },
+            {
+                path: 'register',
+                element: <Register></Register>
             }
+        ]
+    },
+    {
+        path: 'main',
+        element: <Main></Main>,
+        children: [
+            // {
+            //     path: '/chefcard',
+            //     element: <ChefCard></ChefCard>
+            // }
         ]
     }
 ])
