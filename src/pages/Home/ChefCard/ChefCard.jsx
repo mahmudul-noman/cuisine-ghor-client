@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import SingleChefCard from './SingleChefCard';
 
 const ChefCard = () => {
 
@@ -13,13 +14,13 @@ const ChefCard = () => {
 
 
     return (
-        <div>
+        <div className='grid grid-cols-3 container mx-auto my-8 gap-4'>
             {
-                chef.map(chefHome => <p
+                chef.map(chefHome => <SingleChefCard
                     key={chefHome.id}
-                >
-                    {chefHome.chef_name}
-                </p>)
+                    chefHome={chefHome}
+
+                ></SingleChefCard>)
             }
         </div>
     );
