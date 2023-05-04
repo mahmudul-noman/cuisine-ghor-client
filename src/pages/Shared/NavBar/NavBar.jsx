@@ -30,6 +30,7 @@ const NavBar = () => {
                     <ul className="menu menu-horizontal px-1">
                         <ActiveLink to="/" className='myNav'>Home</ActiveLink>
                         <ActiveLink to="/blog" className='myNav'>Blog</ActiveLink>
+                        <ActiveLink to="/about" className='myNav'>About</ActiveLink>
                     </ul>
                 </div>
 

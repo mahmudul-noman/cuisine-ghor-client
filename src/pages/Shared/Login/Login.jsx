@@ -13,7 +13,7 @@ const Login = () => {
 
     const handleLogin = () => {
         event.preventDefault();
-        setSuccess('');
+        setSuccess(''); 
         setError('');
 
         const form = event.target;
