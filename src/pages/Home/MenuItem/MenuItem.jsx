@@ -11,27 +11,27 @@ const MenuItem = () => {
 
                 <div className='flex justify-around gap-4'>
                     <ul className='text-lg leading-10 font-semibold'>
-                        <li>Spaghetti Carbonara - 150$</li>
-                        <li>Spaghetti Bolognese - 200$</li>
-                        <li>Caprese Salad - 500$</li>
-                        <li>Lasagna - 100$</li>
-                        <li>Fettuccine Alfredo - 200$</li>
+                        <li>Spaghetti Carbonara - <span className='text-rose-500 font-semibold italic'>150$</span></li>
+                        <li>Spaghetti Bolognese - <span className='text-rose-500 font-semibold italic'>200$</span></li>
+                        <li>Caprese Salad - <span className='text-rose-500 font-semibold italic'>500$</span></li>
+                        <li>Lasagna - <span className='text-rose-500 font-semibold italic'>100$</span></li>
+                        <li>Fettuccine Alfredo - <span className='text-rose-500 font-semibold italic'>200$</span></li>
                     </ul>
 
                     <ul className='text-lg leading-10 font-semibold'>
-                        <li>Bruschetta - 150$</li>
-                        <li>Risotto alla Milanese - 250$</li>
-                        <li>Gnocchi alla Sorrentina - 480$</li>
-                        <li>Spaghetti Carbonara - 600$</li>
-                        <li>Eggplant Parmigiana - 120$</li>
+                        <li>Bruschetta - <span className='text-rose-500 font-semibold italic'>150$</span></li>
+                        <li>Risotto alla Milanese - <span className='text-rose-500 font-semibold italic'>250$</span></li>
+                        <li>Gnocchi alla Sorrentina - <span className='text-rose-500 font-semibold italic'>480$</span></li>
+                        <li>Spaghetti Carbonara - <span className='text-rose-500 font-semibold italic'>600$</span></li>
+                        <li>Eggplant Parmigiana - <span className='text-rose-500 font-semibold italic'>120$</span></li>
                     </ul>
 
                     <ul className='text-lg leading-10 font-semibold'>
-                        <li>Bruschetta - 150$</li>
-                        <li>Risotto alla Milanese - 250$</li>
-                        <li>Gnocchi alla Sorrentina - 480$</li>
-                        <li>Spaghetti Carbonara - 600$</li>
-                        <li>Eggplant Parmigiana - 120$</li>
+                        <li>Bruschetta - <span className='text-rose-500 font-semibold italic'>150$</span></li>
+                        <li>Risotto alla Milanese - <span className='text-rose-500 font-semibold italic'>250$</span></li>
+                        <li>Gnocchi alla Sorrentina - <span className='text-rose-500 font-semibold italic'>480$</span></li>
+                        <li>Spaghetti Carbonara - <span className='text-rose-500 font-semibold italic'>600$</span></li>
+                        <li>Eggplant Parmigiana - <span className='text-rose-500 font-semibold italic'>120$</span></li>
                     </ul>
                 </div>
                 <div className='flex justify-center mt-8'>

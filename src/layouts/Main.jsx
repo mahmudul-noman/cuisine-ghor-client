@@ -5,6 +5,7 @@ import { Outlet } from 'react-router-dom';
 import Footer from '../pages/Shared/Footer/Footer';
 import ChefCard from '../pages/Home/ChefCard/ChefCard';
 import MenuItem from '../pages/Home/MenuItem/MenuItem';
+import Service from '../pages/Home/Service/Service';
 
 
 const Main = () => {
@@ -14,6 +15,7 @@ const Main = () => {
             <Banner></Banner>
             <ChefCard></ChefCard>
             <MenuItem></MenuItem>
+            <Service></Service>
             <Footer></Footer>
         </div>
     );

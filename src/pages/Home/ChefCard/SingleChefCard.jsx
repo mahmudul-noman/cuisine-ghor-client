@@ -12,7 +12,7 @@ const SingleChefCard = ({ chefHome }) => {
                 <h2 className="card-title font-bold">{chef_name}</h2>
                 <p className='text-base'><span className='font-bold'>Experiences:</span> {chef_experience}</p>
                 <p className='text-base'><span className='font-bold'>Recipes:</span> {chef_recipes_name}</p>
-                <p className='flex gap-2 text-lg font-bold justify-end'><span><FaThumbsUp className='text-rose-600'></FaThumbsUp></span>{total_likes}</p>
+                <p className='flex gap-2 text-lg font-bold mt-2'><span><FaThumbsUp className='text-rose-600'></FaThumbsUp></span>{total_likes}</p>
                 <div className="card-actions justify-end">
                     <Link to={`/chef/${id}`}><button className="btn btn-warning">View Recipes</button></Link>
                 </div>
