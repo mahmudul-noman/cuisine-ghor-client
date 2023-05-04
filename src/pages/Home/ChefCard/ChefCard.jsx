@@ -16,10 +16,10 @@ const ChefCard = () => {
     return (
         <div className='pt-8'>
             <div className='text-center'>
-                <h4 className='text-5xl font-semibold italic text-rose-600'>Our All Special Chefs</h4>
+                <h4 className='lg:text-5xl text-lg font-semibold italic text-rose-600'>Our All Special Chefs</h4>
                 <p className='text-lg font-semibold'>Everything You Want to Know</p>
             </div>
-            <div className='grid grid-cols-3 container mx-auto my-8 gap-4'>
+            <div className='grid lg:grid-cols-3 px-2 lg:px-0 container mx-auto my-8 gap-4'>
 
                 {
                     chef.map(chefHome => <SingleChefCard

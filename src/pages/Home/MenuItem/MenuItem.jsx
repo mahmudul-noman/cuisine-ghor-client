@@ -9,7 +9,7 @@ const MenuItem = () => {
                     <h2 className='text-4xl font-extrabold'><span className='text-amber-500 ital'>From</span> Our Menu</h2>
                 </div>
 
-                <div className='flex justify-around gap-4'>
+                <div className='lg:flex text-center lg:text-justify justify-around gap-4'>
                     <ul className='text-lg leading-10 font-semibold'>
                         <li>Spaghetti Carbonara - <span className='text-rose-500 font-semibold italic'>150$</span></li>
                         <li>Spaghetti Bolognese - <span className='text-rose-500 font-semibold italic'>200$</span></li>

@@ -4,7 +4,7 @@ import { FaFacebookSquare, FaInstagramSquare, FaMapMarkerAlt, FaRegCalendarAlt, 
 const Footer = () => {
     return (
         <div className='bg-gray-800 text-white'>
-            <div className='grid grid-cols-3 gap-4 container mx-auto py-24 justify-items-center'>
+            <div className='grid lg:grid-cols-3 gap-4 container mx-auto lg:px-0 px-2 lg:px-0 py-24 lg:justify-items-center'>
 
 
                 <div>
