@@ -8,6 +8,7 @@ import { AuthContext } from '../../../providers/AuthProvider';
 const NavBar = () => {
 
     const { user, logOut } = useContext(AuthContext);
+    console.log(user);
 
     // console.log(user.email);
 
@@ -38,13 +39,10 @@ const NavBar = () => {
 
                 <div className="navbar-end">
                     {
-                        user?.email ? <div className='flex items-center'>
-                            <li className='list-none'>{user?.email}</li>
-                            <label tabIndex={0} className="btn btn-ghost btn-circle avatar me-2">
-                                <div className="w-10 rounded-full">
-                                    <img src="https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg?w=1060&t=st=1683089653~exp=1683090253~hmac=1ec6d1ff6da3dd434216779f9d407770a0f25f4dac9e47c1784a31ddb3b49353" />
-                                </div>
-                            </label>
+                        user ? <div className='flex items-center'>
+                            <div>
+                                <img className='w-14 h-14 border-2 border-gray-500 p-1 rounded-full object-cover' title={user?.displayName} src={user?.photoURL} alt="" />
+                            </div>
                             <Link onClick={logOut} className="btn btn-outline btn-error border-2 tracking-widest">Logout</Link>
                         </div>
 
