@@ -19,7 +19,7 @@ const Login = () => {
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password);
+        // console.log(email, password);
 
 
         signInUser(email, password)
@@ -29,7 +29,7 @@ const Login = () => {
                 setError('');
                 setSuccess('');
                 setSuccess('Login Successfully');
-                updateUser(result.user, name, photo);
+                // updateUser(result.user, name);
             })
             .catch(error => {
                 setError(error.message);
@@ -43,16 +43,16 @@ const Login = () => {
     //     })
     // }
 
-    const updateUser = (user, name, photo) => {
-        updateProfile(user, {
-            displayName: name,
-            photoURL: photo
-        })
-            .then(() => {
-                console.log("User Name Updated");
-            })
-            .catch(error => setError(error.message))
-    }
+    // const updateUser = (user, name, photo) => {
+    //     updateProfile(user, {
+    //         displayName: name,
+    //         photoURL: photo
+    //     })
+    //         .then(() => {
+    //             console.log("User Name Updated");
+    //         })
+    //         .catch(error => setError(error.message))
+    // }
 
 
 

@@ -40,7 +40,7 @@ const Register = () => {
             return;
         }
 
-        console.log(name, email, password, photo);
+        // console.log(name, email, password, photo);
 
         createUser(email, password, name, photo)
             .then(result => {
