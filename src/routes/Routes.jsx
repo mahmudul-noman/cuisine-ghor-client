@@ -8,11 +8,13 @@ import Register from "../pages/Shared/Register/Register";
 import ChefDetailsLayout from "../layouts/ChefDetailsLayout";
 import ChefDetails from "../pages/Home/ChefDetails/ChefDetails";
 import PrivateRoute from "./PrivateRoute";
+import Blog from "../pages/Shared/Blog/Blog";
+import BlogLayout from "../layouts/BlogLayout";
 
 const router = createBrowserRouter([
     {
-        path: '*',
-        element: <Error></Error>
+        path: 'main',
+        element: <Main></Main>
     },
     {
         path: '/',
@@ -33,10 +35,6 @@ const router = createBrowserRouter([
         ]
     },
     {
-        path: 'main',
-        element: <Main></Main>
-    },
-    {
         path: 'chef',
         element: <ChefDetailsLayout></ChefDetailsLayout>,
         children: [
@@ -46,7 +44,21 @@ const router = createBrowserRouter([
                 loader: ({ params }) => fetch(`https://cuisine-ghor-server-mhnoman75-gmailcom.vercel.app/chef/${params.id}`)
             }
         ]
-    }
+    },
+    {
+        path: '/',
+        element: <BlogLayout></BlogLayout>,
+        children: [
+            {
+                path: 'blog',
+                element: <Blog></Blog>
+            }
+        ]
+    },
+    {
+        path: '*',
+        element: <Error></Error>
+    },
 ])
 
 
