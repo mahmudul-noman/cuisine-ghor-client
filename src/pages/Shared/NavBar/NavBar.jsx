@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FaUtensils } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import ActiveLink from './ActiveLink';
 import './NavBar.css';
+import { AuthContext } from '../../../providers/AuthProvider';
 
 const NavBar = () => {
+
+    const { user, logOut } = useContext(AuthContext);
+
+    // console.log(user.email);
+
     return (
         <div className='shadow-md'>
             <div className="navbar bg-base-100 container mx-auto py-6">
@@ -30,12 +36,20 @@ const NavBar = () => {
 
 
                 <div className="navbar-end">
-                    <label tabIndex={0} className="btn btn-ghost btn-circle avatar me-2">
-                        <div className="w-10 rounded-full">
-                            <img src="https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg?w=1060&t=st=1683089653~exp=1683090253~hmac=1ec6d1ff6da3dd434216779f9d407770a0f25f4dac9e47c1784a31ddb3b49353" />
+                    {
+                        user?.email ? <div className='flex items-center'>
+                            <li className='list-none'>{user?.email}</li>
+                            <label tabIndex={0} className="btn btn-ghost btn-circle avatar me-2">
+                                <div className="w-10 rounded-full">
+                                    <img src="https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg?w=1060&t=st=1683089653~exp=1683090253~hmac=1ec6d1ff6da3dd434216779f9d407770a0f25f4dac9e47c1784a31ddb3b49353" />
+                                </div>
+                            </label>
+                            <Link onClick={logOut} className="btn btn-outline btn-error border-2 tracking-widest">Logout</Link>
                         </div>
-                    </label>
-                    <Link to="/login" className="btn btn-outline btn-warning border-2 tracking-widest">Login</Link>
+
+                            :
+                            <Link to="/login" className="btn btn-outline btn-warning border-2 tracking-widest">Login</Link>
+                    }
                 </div>
             </div>
         </div>

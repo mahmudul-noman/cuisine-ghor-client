@@ -35,7 +35,7 @@ const MenuItem = () => {
                     </ul>
                 </div>
                 <div className='flex justify-center mt-8'>
-                    <button className='btn btn-outline btn-warning'>Order Now</button>
+                    <button className='btn btn-outline btn-error'>Order Now</button>
                 </div>
             </div>
         </div>

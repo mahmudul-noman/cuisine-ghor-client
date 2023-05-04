@@ -1,12 +1,24 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FaHeart, FaStar, FaStarHalfAlt, FaThumbsUp } from 'react-icons/fa';
 import Rating from 'react-rating';
 import { useLoaderData, useParams } from 'react-router-dom';
+import toast, { Toaster } from 'react-hot-toast';
 
 const ChefDetails = () => {
     const details = useLoaderData();
 
     const { chef_image, chef_name, chef_experience, chef_recipes_name, total_likes, id, chef_bio, recipe_img, recipe_name, recipe_ingredients, cooking_method, recipe_rating, recipe_name2, recipe_ingredients2, cooking_method2, recipe_rating2, recipe_img2, recipe_name3, recipe_ingredients3, cooking_method3, recipe_rating3, recipe_img3 } = details;
+
+    const [disabled, setDisabled] = useState(false);
+    const [clicked, setClicked] = useState(false);
+
+    const addToFav = () => {
+        if (!clicked) {
+            toast.success('Added to Favorite');
+            setClicked(true);
+            setDisabled(true);
+        }
+    };
 
     return (
         <div className='pb-12'>
@@ -44,7 +56,18 @@ const ChefDetails = () => {
                         />
                         <h4 className='font-extrabold text-2xl'>{recipe_rating}</h4>
                     </div>
-                    <FaHeart className='text-2xl text-rose-600'></FaHeart>
+
+
+                    <div className='flex gap-2'>
+                        <h4 className='text-rose-600 text-xl font-extrabold'>Add to Favorite</h4>
+                        <FaHeart
+                            onClick={addToFav}
+                            disabled={disabled}
+                            className={`cursor-pointer text-2xl ${disabled ? 'text-gray-400' : 'text-rose-600'}`}
+                        />
+                        <Toaster></Toaster>
+                    </div>
+
                 </div>
             </div>
 
@@ -65,7 +88,14 @@ const ChefDetails = () => {
                         />
                         <h4 className='font-extrabold text-2xl'>{recipe_rating2}</h4>
                     </div>
-                    <FaHeart className='text-2xl text-rose-600'></FaHeart>
+                    <div className='flex gap-2'>
+                        <h4 className='text-rose-600 text-xl font-extrabold'>Add to Favorite</h4>
+                        <FaHeart
+                            onClick={addToFav}
+                            disabled={disabled}
+                            className={`cursor-pointer text-2xl ${disabled ? 'text-gray-400' : 'text-rose-600'}`}
+                        />
+                    </div>
                 </div>
             </div>
 
@@ -86,7 +116,14 @@ const ChefDetails = () => {
                         />
                         <h4 className='font-extrabold text-2xl'>{recipe_rating3}</h4>
                     </div>
-                    <FaHeart className='text-2xl text-rose-600'></FaHeart>
+                    <div className='flex gap-2'>
+                        <h4 className='text-rose-600 text-xl font-extrabold'>Add to Favorite</h4>
+                        <FaHeart
+                            onClick={addToFav}
+                            disabled={disabled}
+                            className={`cursor-pointer text-2xl ${disabled ? 'text-gray-400' : 'text-rose-600'}`}
+                        />
+                    </div>
                 </div>
             </div>
 
