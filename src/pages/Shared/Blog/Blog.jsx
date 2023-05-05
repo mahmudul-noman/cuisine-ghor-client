@@ -21,7 +21,7 @@ const Blog = () => {
                     <div>
                         <Pdf targetRef={ref} filename="Answer.pdf" options={fullPage} x={.9} y={.9} scale={1}>
                             {({ toPdf }) =>
-                                <button onClick={toPdf} className='flex gap-2 btn btn-warning'><FaDownload className='text-black text-xl cursor-pointer'></FaDownload></button>}
+                                <button onClick={toPdf} className='flex gap-2 btn btn-warning' title='Download'><FaDownload className='text-black text-xl cursor-pointer'></FaDownload></button>}
                         </Pdf>
                     </div>
                 </div>
