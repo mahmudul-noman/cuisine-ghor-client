@@ -17,7 +17,7 @@ const Blog = () => {
         <>
             <div ref={ref} className='container mx-auto py-12'>
                 <div className='flex gap-4 justify-center items-center mb-8'>
-                    <h4 className='mb-4 text-center text-2xl font-extrabold font-alt'>All Question & Answer You Want To Know</h4>
+                    <h4 className='mb-4 text-center text-base lg:text-2xl font-extrabold font-alt'>All Question & Answer You Want To Know</h4>
                     <div>
                         <Pdf targetRef={ref} filename="Answer.pdf" options={fullPage} x={.9} y={.9} scale={1}>
                             {({ toPdf }) =>
@@ -25,7 +25,7 @@ const Blog = () => {
                         </Pdf>
                     </div>
                 </div>
-                <div className='grid grid-cols-2 gap-4'>
+                <div className='grid lg:grid-cols-2 gap-4 px-4 lg:px-0'>
                     <div ref={ref} className="one shadow border-2 border-gray-300 p-8">
                         <h4 className='flex items-center gap-4 font-extrabold text-red-500 text-lg mb-4'>Tell us the differences between uncontrolled and controlled components.</h4>
                         <p className='text-base leading-8'>
