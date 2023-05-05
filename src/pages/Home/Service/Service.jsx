@@ -11,11 +11,11 @@ const Service = () => {
     }, [])
 
     return (
-        <div className='grid lg:grid-cols-3 px-2 lg:px-0 gap-4 container mx-auto justify-center py-12 '>
+        <div className='my-24 grid lg:grid-cols-3 px-2 lg:px-0 gap-4 container mx-auto justify-center py-8'>
             {
                 service.map(s => <div key={s.id} className='shadow border-1 border-gray-500 p-8 text-center'>
                     <img className='w-28 h-28 mx-auto mb-4' src={s.service_image} alt="" />
-                    <h2 className='text-4xl font-extrabold '>{s.service_title}</h2>
+                    <h2 className='text-4xl font-extrabold font-alt text-red-700'>{s.service_title}</h2>
                     <p className='mt-4 text-lg font-semibold'>{s.service_description}</p>
                 </div>)
             }

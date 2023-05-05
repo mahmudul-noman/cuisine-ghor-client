@@ -57,6 +57,7 @@ const Footer = () => {
 
 
             </div>
+            <p className='border-t-2 border-gray-100 text-center py-4 text-[#f15f2a] text-base font-semibold'>@ 2023 | All Right Reserved by <span className='font-alt tracking-[.15em] text-white'>Mahmudul Hasan</span></p>
         </div>
     );
 };

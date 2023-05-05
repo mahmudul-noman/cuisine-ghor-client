@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import ActiveLink from './ActiveLink';
 import './NavBar.css';
 import { AuthContext } from '../../../providers/AuthProvider';
+import logo from '/assets/logo.png';
 
 const NavBar = () => {
 
@@ -25,7 +26,10 @@ const NavBar = () => {
                             <ActiveLink to="/blog" className=''>Blog</ActiveLink>
                         </ul>
                     </div>
-                    <Link className="lg:text-xl text-sm font-bold flex gap-2 uppercase lg:tracking-widest"><FaUtensils className='text-2xl text-amber-600'></FaUtensils>Cuisine Ghor</Link>
+                    <div className='flex items-center'>
+                        <img className='w-14 h-14' src={logo} alt="" />
+                        <p className="lg:text-xl text-sm font-bold uppercase">Cuisine Ghor</p>
+                    </div>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">

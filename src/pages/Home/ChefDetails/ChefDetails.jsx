@@ -9,15 +9,29 @@ const ChefDetails = () => {
 
     const { chef_image, chef_name, chef_experience, chef_recipes_name, total_likes, id, chef_bio, recipe_img, recipe_name, recipe_ingredients, cooking_method, recipe_rating, recipe_name2, recipe_ingredients2, cooking_method2, recipe_rating2, recipe_img2, recipe_name3, recipe_ingredients3, cooking_method3, recipe_rating3, recipe_img3 } = details;
 
-    const [disabled, setDisabled] = useState(false);
-    const [clicked, setClicked] = useState(false);
-
+    const [fav, setFav] = useState(true);
     const addToFav = () => {
-        if (!clicked) {
-            toast.success('Added to Favorite');
-            setClicked(true);
-            setDisabled(true);
-        }
+        toast.success('SuccessFully Added To Favorite', {
+            style: { color: 'red' }
+        });
+        setFav(false);
+    };
+
+    const [favO, setFavO] = useState(true);
+    const addToFavO = () => {
+        toast.success('SuccessFully Added To Favorite', {
+            style: { color: 'red' }
+        });
+        setFavO(false);
+    };
+
+
+    const [favT, setFavT] = useState(true);
+    const addToFavT = () => {
+        toast.success('SuccessFully Added To Favorite', {
+            style: { color: 'red' }
+        });
+        setFavT(false);
     };
 
     return (
@@ -30,7 +44,7 @@ const ChefDetails = () => {
                 <div className='flex gap-4 items-center absolute text-white top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
                     <img src={chef_image} className='h-48 w-48 object-cover card' alt="" />
                     <div>
-                        <h4 className='text-2xl font-extrabold mb-2 text-amber-600'>{chef_name}</h4>
+                        <h4 className='text-5xl font-extrabold mb-2 text-yellow-500 font-alt'>{chef_name}</h4>
                         <p className='mb-2'><span className='text-lg text-amber-500 font-extrabold'>About - {chef_name}:</span> {chef_bio}</p>
                         <p className='flex gap-2 text-lg font-bold'><span><FaThumbsUp className='text-rose-600'></FaThumbsUp></span>{total_likes}</p>
                         <p><span className='text-lg font-extrabold text-amber-500'>Recipes:</span> {chef_recipes_name}</p>
@@ -60,12 +74,9 @@ const ChefDetails = () => {
 
                     <div className='flex gap-2'>
                         <h4 className='text-rose-600 text-xl font-extrabold'>Add to Favorite</h4>
-                        <FaHeart
-                            onClick={addToFav}
-                            disabled={disabled}
-                            className={`cursor-pointer text-2xl ${disabled ? 'text-gray-400' : 'text-rose-600'}`}
-                        />
-                        <Toaster></Toaster>
+                        <button disabled={!fav} onClick={addToFav}>
+                            <FaHeart className={fav ? 'w-5 h-5 text-gray-500 shadow-xl' : 'w-5 h-5 text-rose-600 shadow-xl'} />
+                        </button>
                     </div>
 
                 </div>
@@ -90,11 +101,9 @@ const ChefDetails = () => {
                     </div>
                     <div className='flex gap-2'>
                         <h4 className='text-rose-600 text-xl font-extrabold'>Add to Favorite</h4>
-                        <FaHeart
-                            onClick={addToFav}
-                            disabled={disabled}
-                            className={`cursor-pointer text-2xl ${disabled ? 'text-gray-400' : 'text-rose-600'}`}
-                        />
+                        <button disabled={!favO} onClick={addToFavO}>
+                            <FaHeart className={favO ? 'w-5 h-5 text-gray-500 shadow-xl' : 'w-5 h-5 text-rose-600 shadow-xl'} />
+                        </button>
                     </div>
                 </div>
             </div>
@@ -118,11 +127,9 @@ const ChefDetails = () => {
                     </div>
                     <div className='flex gap-2'>
                         <h4 className='text-rose-600 text-xl font-extrabold'>Add to Favorite</h4>
-                        <FaHeart
-                            onClick={addToFav}
-                            disabled={disabled}
-                            className={`cursor-pointer text-2xl ${disabled ? 'text-gray-400' : 'text-rose-600'}`}
-                        />
+                        <button disabled={!favT} onClick={addToFavT}>
+                            <FaHeart className={favT ? 'w-5 h-5 text-gray-500 shadow-xl' : 'w-5 h-5 text-rose-600 shadow-xl'} />
+                        </button>
                     </div>
                 </div>
             </div>
