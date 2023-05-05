@@ -1,19 +1,23 @@
 import React, { useContext, useState } from 'react';
-import { FaGoogle, FaTwitter } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { FaGithub, FaGoogle, FaTwitter } from 'react-icons/fa';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
 
 const Login = () => {
     const { signInUser } = useContext(AuthContext);
-    const { GoogleSignIn, githubSignIn } = useContext(AuthContext);
+    const { googleSignIn, githubSignIn } = useContext(AuthContext);
 
 
     const [error, setError] = useState();
     const [success, setSuccess] = useState();
 
+    const location = useLocation();
+    const navigate = useNavigate();
+    const from = location.state?.from?.pathname || '/';
+
     const handleLogin = () => {
         event.preventDefault();
-        setSuccess(''); 
+        setSuccess('');
         setError('');
 
         const form = event.target;
@@ -29,30 +33,37 @@ const Login = () => {
                 setError('');
                 setSuccess('');
                 setSuccess('Login Successfully');
-                // updateUser(result.user, name);
+                navigate(from, { replace: true });
             })
             .catch(error => {
                 setError(error.message);
             })
     }
 
-    // const handleGoogleSignIn = () => {
-    //     GoogleSignIn(email, password)
-    //     .then(result => {
-    //         const user = result.user;
-    //     })
-    // }
+    const handleGoogleSignIn = () => {
+        googleSignIn()
+            .then(result => {
+                const user = result.user;
+                setUser(user)
+                navigate(from, { replace: true });
+            })
+            .catch(error => {
+                console.log(error.message);
+            })
+    }
 
-    // const updateUser = (user, name, photo) => {
-    //     updateProfile(user, {
-    //         displayName: name,
-    //         photoURL: photo
-    //     })
-    //         .then(() => {
-    //             console.log("User Name Updated");
-    //         })
-    //         .catch(error => setError(error.message))
-    // }
+
+    const handleGithubSignIn = () => {
+        githubSignIn()
+            .then(result => {
+                const loggedUser = result.user;
+                setUser(loggedUser);
+                navigate(from, { replace: true });
+            })
+            .catch(error => {
+                console.log(error.message);
+            })
+    }
 
 
 
@@ -102,12 +113,12 @@ const Login = () => {
                     <div className="absolute px-5 bg-white">Or</div>
                 </div>
                 <div className="flex mt-4 gap-x-2">
-                    <button onClick={GoogleSignIn}
+                    <button onClick={handleGoogleSignIn}
                         type="button" className="flex items-center justify-center w-full p-2 border border-gray-600 rounded-md focus:ring-2 focus:ring-offset-1 hover:bg-yellow-600 hover:text-white">
                         <FaGoogle></FaGoogle>
                     </button>
-                    <button onClick={githubSignIn} className="flex items-center justify-center w-full p-2 border border-gray-600 rounded-md focus:ring-2 focus:ring-offset-1 hover:bg-green-600 hover:text-white">
-                        <FaTwitter></FaTwitter>
+                    <button onClick={handleGithubSignIn} className="flex items-center justify-center w-full p-2 border border-gray-600 rounded-md focus:ring-2 focus:ring-offset-1 hover:bg-green-600 hover:text-white">
+                        <FaGithub></FaGithub>
                     </button>
 
                 </div>

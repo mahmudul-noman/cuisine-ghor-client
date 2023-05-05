@@ -28,30 +28,16 @@ const AuthProvider = ({ children }) => {
     }
 
 
-    const GoogleSignIn = () => {
+    const googleSignIn = () => {
         setLoading(true);
         console.log('Google OK')
         return signInWithPopup(auth, googleProvider)
-            .then(result => {
-                const user = result.user;
-                setUser(user)
-            })
-            .catch(error => {
-                console.log(error.message);
-            })
     }
 
     const githubSignIn = () => {
         setLoading(true);
         console.log('Github OK')
         signInWithPopup(auth, githubProvider)
-            .then(result => {
-                const loggedUser = result.user;
-                setUser(loggedUser);
-            })
-            .catch(error => {
-                console.log(error.message);
-            })
     }
 
 
@@ -64,8 +50,8 @@ const AuthProvider = ({ children }) => {
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth,
             (signUser) => {
-                setLoading(false);
                 setUser(signUser);
+                setLoading(false);
             });
         return () => {
             unSubscribe();
@@ -77,12 +63,12 @@ const AuthProvider = ({ children }) => {
 
     const authInfo = {
         user,
+        loading,
         createUser,
         signInUser,
-        GoogleSignIn,
+        googleSignIn,
         githubSignIn,
-        logOut,
-        loading
+        logOut
     }
 
     return (

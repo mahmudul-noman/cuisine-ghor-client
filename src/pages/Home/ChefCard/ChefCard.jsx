@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react';
 import SingleChefCard from './SingleChefCard';
 
 const ChefCard = () => {
-
+    
     const [chef, setChef] = useState([]);
+    
 
     useEffect(() => {
         fetch('https://cuisine-ghor-server-mhnoman75-gmailcom.vercel.app/chef')

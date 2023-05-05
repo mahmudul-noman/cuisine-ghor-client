@@ -1,15 +1,16 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
-import loader from '../../../assets/loader.gif';
+import loader from '/assets/load.gif';
 
 const Loader = () => {
     return (
         <div>
-            <span className='w-screen h-screen bg-black flex justify-center '>
-            <img src={loader} alt="" />
-        </span>I
+            <span className='bg-black flex justify-center '>
+                <img className='w-full h-screen object-contain' src={loader} alt="" />
+            </span>I
         </div>
     );
 };
 
 export default Loader;
+
